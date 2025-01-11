@@ -23,8 +23,9 @@ jobs:
 
     - name: Commit and push changes
       env:
-        PAT: ${{ secrets.PAT }}
+        PAT_TOKEN: ${{ secrets.PAT }}
       run: |
         git add timestamp
         git commit -m "Update timestamp"
-        git push https://${{ secrets.PAT }}@github.com/${{ github.repository }}.git
+        git push https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
+
