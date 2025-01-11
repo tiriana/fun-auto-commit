@@ -19,9 +19,7 @@ jobs:
     - name: Setup GPG
       run: |
         echo "${{ secrets.GPG }}" | gpg --batch --import
-        echo "trust\n5\ny\n" | gpg --command-fd 0 --batch --edit-key <your-email> trust
-      env:
-        GPG_PRIVATE_KEY: ${{ secrets.GPG }}
+        echo "trust\n5\ny\n" | gpg --command-fd 0 --batch --edit-key ${{ secrets.REPO_OWNER_EMAIL }} trust
 
     - name: Setup Git
       run: |
@@ -35,7 +33,7 @@ jobs:
 
     - name: Commit and Push changes
       env:
-        PAT_TOKEN: ${{ secrets.PAT }}
+        PAT: ${{ secrets.PAT }}
       run: |
         git add timestamp
         git commit -m "Update timestamp"
