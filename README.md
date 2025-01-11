@@ -1,4 +1,4 @@
-A POC to show how dumb this approach is https://x.com/RhysSullivan/status/1873104145709973624
+A fun project in response to this tweet :) https://x.com/RhysSullivan/status/1873104145709973624
 
 This repo literally makes a commit to itself every few minutes thanks to github actions, hence swamping my activity with meaningless green dots.
 
