@@ -38,4 +38,5 @@ jobs:
         git add timestamp
         git commit -m "Update timestamp"
         git remote set-url origin https://${{ secrets.PAT }}@github.com/${{ github.repository }}.git
+        git pull --rebase origin main # Pull latest changes before pushing
         git push origin main
